@@ -1,9 +1,13 @@
 import { Stack, Slot } from "expo-router";
+import { NativeBaseProvider } from "native-base";
+import { THEME } from "../theme";
 
 export default function RootLayout() {
   return (
-    <Stack >
-      <Stack.Screen  options={{headerShown: false}} name="index" />
-    </Stack>
+    <NativeBaseProvider theme={THEME}>
+      <Stack >
+        <Stack.Screen options={{ headerShown: false }} name="index" />
+      </Stack>
+    </NativeBaseProvider>
   );
 }
